@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ORBISX | Space Mission Control</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="https://i.ibb.co/8DjGdWtg/freepik-construct-a-logo-for-orbisx-in-the-vein-of-nasa-pr-25327.png" alt="ORBISX Logo">
+    </div>
+    <nav id="nav-links" class="nav-links">
+      <a href="#mission">Mission Dashboard</a>
+      <a href="#navigator">Orbital Navigator</a>
+      <a href="#command">Command & Control</a>
+      <a href="#comms">Deep Space Comms</a>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" style="background-image: url('https://i.ibb.co/kgg3kGFw/ac50b627-fbd0-4e1f-9a36-f7adefb42880.jpg');">
+    <div class="hero-content">
+      <h1>ORBISX Mission Systems</h1>
+      <p>Command. Navigate. Optimize. Your mission control for the stars.</p>
+      <a href="#mission" class="btn-primary">Launch Dashboard</a>
+    </div>
+  </section>
+
+ 
+<!-- Section 1: Mission Dashboard -->
+<section id="mission" class="section">
+    <h2><i class="fas fa-satellite-dish"></i> Mission Dashboard</h2>
+    <p>Real-time mission status panel showing trajectory, fuel, telemetry health, and system-wide signal diagnostics. Directs operational command decisions from a centralized view.</p>
+  </section>
+
+    <h2><i class="fas fa-globe"></i> </h2>
+   <section class="mission-dashboard">
+        <div class="dashboard-overlay"></div>
+        
+        <div class="dashboard-container">
+            <header class="dashboard-header">
+                <h1>Mission Dashboard</h1>
+                <p class="subtitle">Real-time monitoring and control of active space missions</p>
+            </header>
+            
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="card-icon">
+                        <i class="fas fa-satellite"></i>
+                    </div>
+                    <div class="metric-value">12</div>
+                    <h3 class="metric-title">Active Missions</h3>
+                    <p class="metric-desc">Currently in operation</p>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="card-icon">
+                        <i class="fas fa-signal"></i>
+                    </div>
+                    <div class="metric-value">98%</div>
+                    <h3 class="metric-title">Signal Strength</h3>
+                    <p class="metric-desc">Deep Space Network</p>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="card-icon">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <div class="metric-value">0.02°</div>
+                    <h3 class="metric-title">Trajectory Accuracy</h3>
+                    <p class="metric-desc">Course deviation</p>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="card-icon">
+                        <i class="fas fa-battery-three-quarters"></i>
+                    </div>
+                    <div class="metric-value">82%</div>
+                    <h3 class="metric-title">Power Reserve</h3>
+                    <p class="metric-desc">Average across fleet</p>
+                </div>
+            </div>
+            
+            <a href="#" class="cta-button">
+                <i class="fas fa-rocket"></i> Launch Control Panel
+            </a>
+        </div>
+    </section>
+
+  <!-- SECTION 2: ORBITAL NAVIGATOR -->
+
+        <section id="navigator" class="section">
+    <div class="panel-header">
+            <h1><i class="fas fa-rocket"></i> Orbital Navigator</h1>
+            <p>Configure your space mission parameters</p>
+        </div>
+        
+        <div class="panel-grid">
+            <!-- Orbit Controls -->
+            <div class="control-card">
+                <h2><i class="fas fa-satellite"></i> Orbit Selection</h2>
+                <div class="form-group">
+                    <label>Orbit Type</label>
+                    <select class="space-select">
+                        <option>Low Earth Orbit</option>
+                        <option>Geostationary</option>
+                        <option>Polar Orbit</option>
+                        <option>Heliocentric</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Altitude: <span class="value">400 km</span></label>
+                    <input type="range" min="200" max="36000" value="400" class="space-slider">
+                </div>
+            </div>
+            
+            <!-- Propulsion Controls -->
+            <div class="control-card">
+                <h2><i class="fas fa-fire"></i> Propulsion</h2>
+                <div class="form-group">
+                    <label>Delta-V: <span class="value">3,200 m/s</span></label>
+                    <input type="range" min="0" max="10000" value="3200" class="space-slider">
+                </div>
+                <div class="form-group">
+                    <label>Thrust: <span class="value">75%</span></label>
+                    <input type="range" min="0" max="100" value="75" class="space-slider">
+                </div>
+            </div>
+            
+            <!-- Gravity Assist -->
+            <div class="control-card">
+                <h2><i class="fas fa-planet-ringed"></i> Gravity Assist</h2>
+                <div class="form-group">
+                    <label>Celestial Body</label>
+                    <select class="space-select">
+                        <option>None</option>
+                        <option>Moon</option>
+                        <option>Mars</option>
+                        <option>Jupiter</option>
+                      <option>Uranus</option>
+                      <option>Saturn</option>
+                      <option>Venus</option>                     
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Approach Angle: <span class="value">0°</span></label>
+                    <input type="range" min="-180" max="180" value="0" class="space-slider">
+                </div>
+            </div>
+            
+            <!-- Visualization -->
+            <div class="visualization-card">
+                <h2><i class="fas fa-globe"></i> Orbit Visualization</h2>
+                <div class="viz-placeholder">
+                    <i class="fas fa-satellite"></i>
+                    <p>3D Trajectory Preview</p>
+                </div>
+<video>
+        <source
+            src="
+           https://www.youtube.com/watch?v=Yla5i5tzXKE"
+            type="video/mp4">
+        
+    </video>
+            </div>
+        </div>
+        
+        <div class="panel-actions">
+            <button class="btn primary"><i class="fas fa-play"></i> Simulate</button>
+            <button class="btn secondary"><i class="fas fa-redo"></i> Reset</button>
+        </div>
+    </section>
+
+
+
+  <!-- SECTION 3: COMMAND & CONTROL -->
+
+  <section id="command" class="section">
+    <h2><i class="fas fa-terminal"></i> Command & Control Console</h2>
+    <p>Secure uplink console for sending command sequences, reviewing system telemetry, and issuing emergency overrides in mission-critical moments.</p>
+<!-- Section 3: Command & Control Console --> <section class="mission-console">
+        <header class="console-header">
+            <h1><i class="fas fa-satellite-dish"></i> MISSION CONTROL CONSOLE</h1>
+            <div class="status-indicators">
+                <span class="status active"><i class="fas fa-circle"></i> ONLINE</span>
+                <span class="status"><i class="fas fa-shield-alt"></i> NOMINAL</span>
+            </div>
+        </header>
+        
+        <div class="console-grid">
+            <!-- Telemetry Panel -->
+            <div class="telemetry-panel">
+                <h2><i class="fas fa-heartbeat"></i> VEHICLE TELEMETRY</h2>
+                
+                <div class="telemetry-grid">
+                    <div class="telemetry-card">
+                        <div class="telemetry-value">98.7%</div>
+                        <div class="telemetry-label"><i class="fas fa-battery-full"></i> POWER</div>
+                    </div>
+                    
+                    <div class="telemetry-card critical">
+                        <div class="telemetry-value">42°C</div>
+                        <div class="telemetry-label"><i class="fas fa-temperature-high"></i> TEMP</div>
+                    </div>
+                    
+                    <div class="telemetry-card">
+                        <div class="telemetry-value">12,345</div>
+                        <div class="telemetry-label"><i class="fas fa-tachometer-alt"></i> RPM</div>
+                    </div>
+                    
+                    <div class="telemetry-card">
+                        <div class="telemetry-value">78%</div>
+                        <div class="telemetry-label"><i class="fas fa-gas-pump"></i> FUEL</div>
+                    </div>
+                    
+                    <div class="telemetry-card">
+                        <div class="telemetry-value">0.02°</div>
+                        <div class="telemetry-label"><i class="fas fa-crosshairs"></i> DEVIATION</div>
+                    </div>
+                    
+                    <div class="telemetry-card">
+                        <div class="telemetry-value">97%</div>
+                        <div class="telemetry-label"><i class="fas fa-signal"></i> SIGNAL</div>
+                    </div>
+                </div>
+                
+                <div class="telemetry-log">
+                    <h3><i class="fas fa-scroll"></i> SYSTEM LOG</h3>
+                    <div class="log-entries">
+                        <div class="log-entry"><span class="timestamp">[12:45:32]</span> Navigation systems nominal</div>
+                        <div class="log-entry"><span class="timestamp">[12:46:01]</span> Thruster calibration complete</div>
+                        <div class="log-entry warning"><span class="timestamp">[12:47:15]</span> Temperature threshold warning</div>
+                        <div class="log-entry"><span class="timestamp">[12:47:30]</span> Cooling systems engaged</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Command Panel -->
+            <div class="command-panel">
+                <h2><i class="fas fa-terminal"></i> COMMAND INTERFACE</h2>
+                
+                <div class="command-section">
+                    <h3><i class="fas fa-cogs"></i> SYSTEM CONTROLS</h3>
+                    <div class="command-buttons">
+                        <button class="cmd-btn"><i class="fas fa-power-off"></i> REBOOT</button>
+                        <button class="cmd-btn"><i class="fas fa-sync-alt"></i> RECALIBRATE</button>
+                        <button class="cmd-btn"><i class="fas fa-database"></i> DIAGNOSTICS</button>
+                    </div>
+                </div>
+                
+                <div class="command-section">
+                    <h3><i class="fas fa-space-shuttle"></i> FLIGHT CONTROLS</h3>
+                    <div class="command-grid">
+                        <button class="cmd-btn"><i class="fas fa-arrow-up"></i> PITCH UP</button>
+                        <button class="cmd-btn"><i class="fas fa-arrow-down"></i> PITCH DOWN</button>
+                        <button class="cmd-btn"><i class="fas fa-arrow-left"></i> YAW LEFT</button>
+                        <button class="cmd-btn"><i class="fas fa-arrow-right"></i> YAW RIGHT</button>
+                        <button class="cmd-btn"><i class="fas fa-plus"></i> THRUST +</button>
+                        <button class="cmd-btn"><i class="fas fa-minus"></i> THRUST -</button>
+                    </div>
+                </div>
+                
+                <div class="command-section emergency">
+                    <h3><i class="fas fa-exclamation-triangle"></i> EMERGENCY OVERRIDE</h3>
+                    <div class="emergency-control">
+                        <div class="safety-switch">
+                            <span>SAFETY LOCK</span>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <button class="emergency-btn"><i class="fas fa-skull-crossbones"></i> ACTIVATE OVERRIDE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  <!-- SECTION 4: DEEP SPACE COMMS HUB -->
+  <section id="comms" class="section dark">
+    <h2><i class="fas fa-wifi"></i> Deep Space Comms Hub</h2>
+    <p>Handle signal routing across the solar system. Integrates DSN scheduling, laser vs. radio communications analysis, and delay-tolerant networking strategies.</p>
+<!-- Section 4: Deep Space Comms Hub -->
+<section id="comms-hub" class="section comms-hub">
+  <div class="container">
+    
+    <p class="section-subtitle">Autonomous signal routing and interplanetary communication management</p>
+
+    <div class="comms-grid">
+      <div class="comms-card">
+        <i class="fas fa-random icon"></i>
+        <h3>DTN Protocol Routing</h3>
+        <p>Handles high-latency packet delivery across deep space nodes with resilient store-and-forward logic.</p>
+      </div>
+
+      <div class="comms-card">
+        <i class="fas fa-clock icon"></i>
+        <h3>Antenna Scheduling</h3>
+        <p>Real-time sync with DSN tracking stations for optimized signal relay windows and fallback links.</p>
+      </div>
+
+      <div class="comms-card">
+        <i class="fas fa-wave-square icon"></i>
+        <h3>Laser vs. Radio Analysis</h3>
+        <p>AI-assisted analyzer compares laser comms advantages with RF under current conditions and priorities.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </section>
+
+    <section class="comms-dashboard">
+        <header class="dashboard-header">
+            <h1><i class="fas fa-satellite"></i> Deep Space Communications</h1>
+            <p>Delay-Tolerant Networking Monitoring & Analysis</p>
+        </header>
+        
+        <div class="comms-grid">
+            <!-- DTN Status Card -->
+            <div class="comms-card dtn-status">
+                <div class="card-header">
+                    <i class="fas fa-network-wired"></i>
+                    <h2>DTN Bundle Status</h2>
+                </div>
+                <div class="card-body">
+                    <div class="metric">
+                        <div class="metric-value">87%</div>
+                        <div class="metric-label">Bundle Completion</div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 87%"></div>
+                    </div>
+                    <div class="dtn-nodes">
+                        <div class="node">
+                            <i class="fas fa-satellite-dish active"></i>
+                            <span>DSN-34</span>
+                        </div>
+                        <div class="node">
+                            <i class="fas fa-satellite"></i>
+                            <span>Orbiter-7</span>
+                        </div>
+                        <div class="node">
+                            <i class="fas fa-satellite-dish active"></i>
+                            <span>DSN-63</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Antenna Sync Card -->
+            <div class="comms-card antenna-sync">
+                <div class="card-header">
+                    <i class="fas fa-satellite-dish"></i>
+                    <h2>Antenna Synchronization</h2>
+                </div>
+                <div class="card-body">
+                    <div class="sync-metrics">
+                        <div class="metric">
+                            <div class="metric-value">12.7s</div>
+                            <div class="metric-label">Avg. Delay</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">94%</div>
+                            <div class="metric-label">Sync Accuracy</div>
+                        </div>
+                    </div>
+                    <div class="antenna-visual">
+                        <div class="earth">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <div class="satellite">
+                            <i class="fas fa-satellite"></i>
+                        </div>
+                        <div class="connection-line"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Signal Analysis Card -->
+            <div class="comms-card signal-analysis">
+                <div class="card-header">
+                    <i class="fas fa-signal"></i>
+                    <h2>Signal Analysis</h2>
+                </div>
+                <div class="card-body">
+                    <div class="signal-metrics">
+                        <div class="metric">
+                            <div class="metric-value">-78.3 dBm</div>
+                            <div class="metric-label">Signal Strength</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">3.2 Mbps</div>
+                            <div class="metric-label">Data Rate</div>
+                        </div>
+                    </div>
+                    <div class="signal-visual">
+                        <div class="signal-wave"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Schedule Card -->
+            <div class="comms-card contact-schedule">
+                <div class="card-header">
+                    <i class="fas fa-clock"></i>
+                    <h2>Contact Schedule</h2>
+                </div>
+                <div class="card-body">
+                    <div class="schedule-item">
+                        <div class="schedule-time">14:30 - 15:45 UTC</div>
+                        <div class="schedule-detail">DSN-63 ➔ Mars Orbiter</div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">18:20 - 19:10 UTC</div>
+                        <div class="schedule-detail">DSN-34 ➔ Lunar Relay</div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-time">22:05 - 23:30 UTC</div>
+                        <div class="schedule-detail">DSN-45 ➔ Jupiter Probe</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Section 5: Exploration Visualizer -->
+<section id="exploration-visualizer" class="section exploration-visualizer">
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-globe"></i> Exploration Visualizer</h2>
+    <p class="section-subtitle">Simulating space history, discovery, and outreach in 4D</p>
+
+    <div class="explorer-grid">
+      <div class="explorer-card">
+        <i class="fas fa-rocket icon"></i>
+        <h3>Mission Trajectories</h3>
+        <p>Replay iconic missions like Cassini & Voyager with dynamic orbital paths and waypoints.</p>
+      </div>
+      <div class="explorer-card">
+        <i class="fas fa-star icon"></i>
+        <h3>Exoplanet Flybys</h3>
+        <p>Visual flyby previews based on real-time data—glimpse targets like Kepler-452b and TRAPPIST-1e.</p>
+      </div>
+      <div class="explorer-card">
+        <i class="fas fa-graduation-cap icon"></i>
+        <h3>Education Mode</h3>
+        <p>Interactive visuals designed for students, featuring labeled celestial bodies and simplified physics.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class="mission-gallery">
+        <header class="gallery-header">
+            <h1><i class="fas fa-stars"></i> Historic Mission Explorer</h1>
+            <p>Explore legendary space missions and their discoveries</p>
+        </header>
+        
+        <div class="mission-grid">
+            <!-- Cassini Mission Card -->
+            <div class="mission-card cassini">
+                <div class="mission-image">
+                    <div class="mission-badge">1997-2017</div>
+                </div>
+                <div class="mission-content">
+                    <h2><i class="fas fa-ringed-planet"></i> Cassini-Huygens</h2>
+                    <div class="mission-stats">
+                        <div class="stat">
+                            <i class="fas fa-road"></i>
+                            <span>4.9B km</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-clock"></i>
+                            <span>20 years</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-camera"></i>
+                            <span>450k+ images</span>
+                        </div>
+                    </div>
+                    <p class="mission-desc">Revolutionized our understanding of Saturn and its moons, including the discovery of liquid methane lakes on Titan.</p>
+                    <button class="mission-btn">Explore Mission</button>
+                </div>
+            </div>
+            
+            <!-- Voyager Mission Card -->
+            <div class="mission-card voyager">
+                <div class="mission-image">
+                    <div class="mission-badge">1977-Present</div>
+                </div>
+                <div class="mission-content">
+                    <h2><i class="fas fa-space-shuttle"></i> Voyager Program</h2>
+                    <div class="mission-stats">
+                        <div class="stat">
+                            <i class="fas fa-road"></i>
+                            <span>23B km</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-clock"></i>
+                            <span>46+ years</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-signal"></i>
+                            <span>Interstellar</span>
+                        </div>
+                    </div>
+                    <p class="mission-desc">The farthest human-made objects from Earth, now exploring interstellar space beyond our solar system.</p>
+                    <button class="mission-btn">Explore Mission</button>
+                </div>
+            </div>
+            
+            <!-- Education Zone -->
+            <div class="education-zone">
+                <div class="edu-header">
+                    <h2><i class="fas fa-graduation-cap"></i> Learning Center</h2>
+                    <p>Interactive resources for students and educators</p>
+                </div>
+                <div class="edu-features">
+                    <div class="edu-card">
+                        <i class="fas fa-vr-cardboard"></i>
+                        <h3>3D Solar System</h3>
+                        <p>Explore planets and spacecraft in immersive 3D</p>
+                    </div>
+                    <div class="edu-card">
+                        <i class="fas fa-book-open"></i>
+                        <h3>Mission Archives</h3>
+                        <p>Primary source documents and images</p>
+                    </div>
+                    <div class="edu-card">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <h3>Lesson Plans</h3>
+                        <p>Curriculum-aligned teaching materials</p>
+                    </div>
+                </div>
+                <button class="edu-btn">Access Resources</button>
+            </div>
+            
+            <!-- Upcoming Missions -->
+            <div class="mission-card upcoming">
+                <div class="mission-image">
+                    <div class="mission-badge">Future</div>
+                </div>
+                <div class="mission-content">
+                    <h2><i class="fas fa-rocket"></i> Upcoming Missions</h2>
+                    <ul class="mission-list">
+                        <li>Europa Clipper (2024)</li>
+                        <li>Mars Sample Return (2028)</li>
+                        <li>LUVOIR Space Telescope (2035)</li>
+                    </ul>
+                    <button class="mission-btn">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Section 6: AI Optimization Engine -->
+<section id="ai-engine" class="section ai-engine">
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-brain"></i> AI Optimization Engine</h2>
+    <p class="section-subtitle">Autonomous intelligence driving trajectory optimization and fault prediction</p>
+
+    <div class="ai-grid">
+      <div class="ai-card">
+        <i class="fas fa-route icon"></i>
+        <h3>Trajectory Correction</h3>
+        <p>ML algorithms optimize orbital maneuvers with minimal delta-v based on current anomalies and goals.</p>
+      </div>
+      <div class="ai-card">
+        <i class="fas fa-exclamation-triangle icon"></i>
+        <h3>Fault Prediction</h3>
+        <p>Predicts subsystem failures before they occur using telemetry and historical pattern analysis.</p>
+      </div>
+      <div class="ai-card">
+        <i class="fas fa-broadcast-tower icon"></i>
+        <h3>Signal Storm Rerouting</h3>
+        <p>Detects solar disruptions and reroutes signals in real-time using adaptive neural comms logic.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class="ai-control">
+        <header class="ai-header">
+            <h1><i class="fas fa-brain"></i> Autonomous Mission Intelligence</h1>
+            <p>AI-driven decision making for deep space operations</p>
+        </header>
+        
+        <div class="ai-dashboard">
+            <!-- Autonomous Decisions -->
+            <div class="ai-module decision-module">
+                <div class="module-header">
+                    <i class="fas fa-robot"></i>
+                    <h2>Autonomous Decisions</h2>
+                    <div class="ai-status active">ACTIVE</div>
+                </div>
+                <div class="module-content">
+                    <div class="decision-card">
+                        <div class="decision-icon">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <div class="decision-details">
+                            <h3>Trajectory Adjustment</h3>
+                            <p>Executed 12.7m/s burn for optimal Mars approach</p>
+                            <div class="decision-meta">
+                                <span class="confidence">98.2% confidence</span>
+                                <span class="timestamp">2.4s ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="decision-card">
+                        <div class="decision-icon">
+                            <i class="fas fa-solar-panel"></i>
+                        </div>
+                        <div class="decision-details">
+                            <h3>Power Management</h3>
+                            <p>Reallocated 37% power to science instruments</p>
+                            <div class="decision-meta">
+                                <span class="confidence">95.6% confidence</span>
+                                <span class="timestamp">1.2m ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ai-actions">
+                        <button class="ai-btn approve"><i class="fas fa-check-circle"></i> Approve All</button>
+                        <button class="ai-btn review"><i class="fas fa-search"></i> Review</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Signal Routing -->
+            <div class="ai-module signal-module">
+                <div class="module-header">
+                    <i class="fas fa-network-wired"></i>
+                    <h2>Dynamic Signal Routing</h2>
+                    <div class="ai-status optimizing">OPTIMIZING</div>
+                </div>
+                <div class="module-content">
+                    <div class="network-visual">
+                        <div class="network-node earth">
+                            <i class="fas fa-globe-americas"></i>
+                            <span>Earth</span>
+                        </div>
+                        <div class="network-node relay">
+                            <i class="fas fa-satellite"></i>
+                            <span>Lunar Relay</span>
+                        </div>
+                        <div class="network-node spacecraft">
+                            <i class="fas fa-space-shuttle"></i>
+                            <span>Orion VII</span>
+                        </div>
+                        <div class="network-connections">
+                            <div class="connection primary"></div>
+                            <div class="connection secondary"></div>
+                        </div>
+                    </div>
+                    <div class="signal-stats">
+                        <div class="signal-stat">
+                            <div class="stat-value">12.7ms</div>
+                            <div class="stat-label">Avg. Latency</div>
+                        </div>
+                        <div class="signal-stat">
+                            <div class="stat-value">98.4%</div>
+                            <div class="stat-label">Uptime</div>
+                        </div>
+                        <div class="signal-stat">
+                            <div class="stat-value">3.2Gbps</div>
+                            <div class="stat-label">Throughput</div>
+                        </div>
+                    </div>
+                    <div class="routing-controls">
+                        <button class="ai-btn route-optimize"><i class="fas fa-bolt"></i> Optimize Now</button>
+                        <button class="ai-btn route-manual"><i class="fas fa-hand-paper"></i> Manual Control</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Anomaly Detection -->
+            <div class="ai-module anomaly-module">
+                <div class="module-header">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h2>Anomaly Detection</h2>
+                    <div class="ai-status monitoring">MONITORING</div>
+                </div>
+                <div class="module-content">
+                    <div class="anomaly-alert critical">
+                        <div class="alert-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="alert-details">
+                            <h3>Thruster Temperature</h3>
+                            <p>Portside thruster exceeding normal operating range</p>
+                            <div class="alert-meta">
+                                <span class="severity">CRITICAL</span>
+                                <span class="timestamp">Detected 45s ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="anomaly-alert warning">
+                        <div class="alert-icon">
+                            <i class="fas fa-memory"></i>
+                        </div>
+                        <div class="alert-details">
+                            <h3>Memory Allocation</h3>
+                            <p>Science buffer nearing capacity</p>
+                            <div class="alert-meta">
+                                <span class="severity">WARNING</span>
+                                <span class="timestamp">Detected 3.2m ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ai-prediction">
+                        <div class="prediction-graph"></div>
+                        <div class="prediction-text">
+                            <h3>Predictive Analysis</h3>
+                            <p>87% probability of similar anomalies in next orbit</p>
+                            <button class="ai-btn predict-btn"><i class="fas fa-chart-line"></i> View Forecast</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- AI Output Container -->
+            <div class="ai-output-container">
+                <div class="output-header">
+                    <i class="fas fa-code"></i>
+                    <h2>AI Decision Log</h2>
+                    <div class="output-controls">
+                        <button class="output-btn active">Real-time</button>
+                        <button class="output-btn">Historical</button>
+                        <button class="output-btn">Raw Data</button>
+                    </div>
+                </div>
+                <div class="output-content">
+                    <div class="log-entry">
+                        <div class="log-timestamp">[12:45:32.781]</div>
+                        <div class="log-message">Adjusted comms frequency to 8.425GHz based on solar interference prediction</div>
+                    </div>
+                    <div class="log-entry">
+                        <div class="log-timestamp">[12:46:05.112]</div>
+                        <div class="log-message">Compensated for 0.02° attitude drift using RCS thrusters</div>
+                    </div>
+                    <div class="log-entry">
+                        <div class="log-timestamp">[12:47:33.445]</div>
+                        <div class="log-message">Initiated thermal roll maneuver to regulate instrument temperature</div>
+                    </div>
+                    <div class="log-entry">
+                        <div class="log-timestamp">[12:48:01.927]</div>
+                        <div class="log-message">Rerouted data packets through secondary relay (packet loss &lt;0.1%)</div>
+                    </div>
+                </div>
+                <div class="output-footer">
+                    <div class="model-info">
+                        <span>Model: NeuroSpace-7B</span>
+                        <span>Inference: 42ms</span>
+                    </div>
+                    <button class="ai-btn export-btn"><i class="fas fa-download"></i> Export Logs</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- Section 7: Structural Alignment Summary -->
+<section id="structural-alignment" class="section structural-alignment">
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-project-diagram"></i> Structural Alignment</h2>
+    <p class="section-subtitle">How all ORBISX systems interconnect to deliver seamless mission execution</p>
+
+    <div class="alignment-flow">
+      <div class="flow-group">
+        <h3><i class="fas fa-cogs"></i> Operational Triad</h3>
+        <ul>
+          <li>Mission Dashboard</li>
+          <li>Orbital Navigator</li>
+          <li>Command & Control Console</li>
+        </ul>
+      </div>
+
+      <div class="flow-group">
+        <h3><i class="fas fa-satellite"></i> Data Flow & Visualization</h3>
+        <ul>
+          <li>Deep Space Comms Hub</li>
+          <li>Exploration Visualizer</li>
+        </ul>
+      </div>
+
+      <div class="flow-group">
+        <h3><i class="fas fa-brain"></i> AI Cross-Layer</h3>
+        <ul>
+          <li>AI Optimization Engine enhances all systems</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+<!-- Section 7: Structural Alignment Summary (Interactive Ready) -->
+<section id="structural-alignment" class="section structural-alignment">
+  <div class="container">
+    
+
+    
+</section>
+
+<!-- In your <head> section -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+
+<!-- Right before closing </body> -->
+<script src="js/script.js"></script> <!-- Your JS file -->
+
+<!-- Check the file path is correct -->
+<script src="js/script.js"></script>
+
+<!-- Add this temporary test -->
+<script>
+console.log("JS file loaded!"); // Should appear in browser console
+</script>
+
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('active');
+    }
+  </script>
+<script src="script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Test metric card
+    const card = document.querySelector('.metric-card');
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-5px)';
+        this.querySelector('.card-icon').style.transform = 'scale(1.2)';
+    });
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = '';
+        this.querySelector('.card-icon').style.transform = '';
+    });
+    
+    // Test data update
+    setInterval(function() {
+        const valueElement = document.querySelector('.metric-value');
+        const newValue = Math.floor(Math.random() * 5) + 10;
+        valueElement.textContent = newValue;
+        valueElement.style.color = '#fc3d21';
+        setTimeout(() => valueElement.style.color = '', 300);
+    }, 2000);
+    
+    console.log("ORBISX script loaded successfully!");
+});
+</script>
+
+</body>
+</html>
